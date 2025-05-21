@@ -25,8 +25,8 @@ import static org.mockito.Mockito.spy;
 
    @Test
     void getFamily() {
-        Feline feline1 = new Feline();
-        assertEquals("Кошачьи", feline1.getFamily());
+        Feline feline = new Feline();
+        assertEquals("Кошачьи", feline.getFamily());
     }
 
 
