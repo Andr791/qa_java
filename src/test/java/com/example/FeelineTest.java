@@ -18,8 +18,8 @@ public class FeelineTest { // вынес параметризацию в отд�
             "2, 2"
     })
     void testGetKittensReturnsCustomCount(int count, int expectedResult){
-        Feline feline1 = new Feline();
-        int actual = feline1.getKittens(count);
+        Feline feline = new Feline();
+        int actual = feline.getKittens(count);
         assertEquals(expectedResult, actual);
     }
 
