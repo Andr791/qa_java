@@ -16,14 +16,14 @@ class LionTests {
 
     @Test
     void getKittens() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion(feline, "Самец");
         lion.getKittens();
         Mockito.verify(feline).getKittens();
     }
 
     @Test
     void getFood() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion(feline, "Самец");
         lion.getFood();
         Mockito.verify(feline).getFood("Хищник");
     }
@@ -31,19 +31,19 @@ class LionTests {
 
     @Test
     public void testMaleLionHasMane() throws Exception {
-        Lion maleLion = new Lion("Самец");
+        Lion maleLion = new Lion(feline,"Самец");
         assertTrue(maleLion.doesHaveMane());
     }
 
     @Test
     public void testFemaleLionDoesNotHaveMane() throws Exception {
-        Lion femaleLion = new Lion("Самка");
+        Lion femaleLion = new Lion(feline,"Самка");
         assertFalse(femaleLion.doesHaveMane());
     }
 
     @Test
     public void testUnknownSexThrowsException() throws Exception {
-        Throwable exception = assertThrows(Exception.class, () -> new Lion("Некорректное значение пола"));
+        Throwable exception = assertThrows(Exception.class, () -> new Lion(feline,"Некорректное значение пола"));
         assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
     }
 
